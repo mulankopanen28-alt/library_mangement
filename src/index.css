@@ -1,0 +1,210 @@
+*{box-sizing:border-box}
+
+:root{
+  --navy:#123047;
+  --teal:#168f8a;
+  --gold:#d49b35;
+  --cream:#f7f4ed;
+  --ink:#23343d;
+  --line:#d8dedc;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+}
+
+button,input,select{font:inherit}
+
+header{
+  background:var(--navy);
+  color:white;
+  padding:30px 7%;
+  border-bottom:5px solid var(--gold);
+}
+
+header h1{
+  margin:0;
+  letter-spacing:1px;
+  font-size:30px;
+}
+
+header p{
+  margin:8px 0 0;
+  color:#dce8ec;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 7%;
+  background:white;
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+
+nav button{
+  background:transparent;
+  color:var(--navy);
+  border:2px solid transparent;
+  border-radius:6px;
+  padding:9px 15px;
+  cursor:pointer;
+}
+
+nav button:hover,
+nav button.active{
+  color:white;
+  background:var(--teal);
+}
+
+main{
+  width:min(1150px,90%);
+  margin:32px auto;
+}
+
+h2{
+  color:var(--navy);
+  margin-bottom:20px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-left:5px solid var(--teal);
+  padding:22px;
+  margin-bottom:22px;
+  border-radius:5px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:22px;
+}
+
+.stat{
+  background:var(--navy);
+  color:white;
+  padding:20px;
+  border-radius:5px;
+  border-top:4px solid var(--gold);
+}
+
+.stat strong{
+  display:block;
+  color:white;
+  font-size:29px;
+  margin-top:9px;
+}
+
+form{
+  display:grid;
+  gap:11px;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  border:1px solid #bdc9c6;
+  border-radius:4px;
+  background:#fcfdfc;
+  color:var(--ink);
+}
+
+input:focus,select:focus{
+  outline:2px solid #9bd4d0;
+  border-color:var(--teal);
+}
+
+button{
+  border:0;
+  border-radius:4px;
+  padding:10px 15px;
+  background:var(--teal);
+  color:white;
+  cursor:pointer;
+}
+
+button:hover{background:#10716e}
+
+button.danger{background:#b54e4e}
+button.danger:hover{background:#923b3b}
+button.secondary{background:#65737b}
+button.success{background:#3d8060}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.table-wrap{overflow-x:auto}
+
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin-top:10px;
+}
+
+th,td{
+  padding:12px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+
+th{
+  background:#e9f1ef;
+  color:var(--navy);
+}
+
+tr:hover td{background:#fafcfb}
+
+.low-stock td{background:#fff0d1}
+
+.status{font-weight:bold}
+.status.Pending{color:#9a6a18}
+.status.Approved{color:#347453}
+.status.Rejected,.status.Overdue{color:#b54e4e}
+.status.Returned{color:#65737b}
+.status.Borrowed{color:#347453}
+
+.message{
+  padding:11px 14px;
+  border-radius:4px;
+  background:#e9f1ef;
+}
+
+.message.good{background:#dcebe4}
+.message.bad{background:#f7dddd}
+
+.login-box{
+  max-width:420px;
+  margin:65px auto;
+  border-top:5px solid var(--gold);
+  border-left:1px solid var(--line);
+}
+
+footer{
+  text-align:center;
+  padding:28px;
+  color:#65737b;
+}
+
+@media(max-width:850px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:560px){
+  header{padding:24px 5%}
+  nav{padding:12px 5%}
+  main{width:94%}
+  .grid{grid-template-columns:1fr}
+  header h1{font-size:24px}
+}
